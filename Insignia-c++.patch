@@ -1,0 +1,11 @@
+--- Insignia-1.0.4/lib/InsigniaUtil.cpp.orig	2014-03-17 18:07:05.000000000 +0100
++++ Insignia-1.0.4/lib/InsigniaUtil.cpp	2014-04-01 21:06:37.307785370 +0200
+@@ -569,7 +569,7 @@
+      if (&rect != &noRect) {
+           if (!dfb_rectangle_intersect( &r, &rect )) {
+                throw new Exception( Direct::String::F( 
+-                    "PixelBuffer::dump: No intersection ["DFB_RECT_FORMAT" vs "DFB_RECT_FORMAT"] writing to '%s'!",
++                    "PixelBuffer::dump: No intersection [" DFB_RECT_FORMAT " vs " DFB_RECT_FORMAT "] writing to '%s'!",
+                     DFB_RECTANGLE_VALS(&rect), DFB_RECTANGLE_VALS(&r), filename.buffer() ) );
+           }
+      }

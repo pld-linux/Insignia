@@ -1,12 +1,13 @@
 Summary:	Insignia - DirectFB conformance test suite
 Summary(pl.UTF-8):	Insignia - zbiór testów zgodności DirectFB
 Name:		Insignia
-Version:	1.0.2
+Version:	1.0.4
 Release:	1
 License:	proprietary
 Group:		Libraries
 Source0:	http://www.directfb.org/downloads/Extras/%{name}-%{version}.tar.gz
-# NoSource0-md5:	09103054a3a97fceb079869ad8811b8d
+# NoSource0-md5:	b16fdcbd9307710bda138223fba0a749
+Patch0:		%{name}-c++.patch
 NoSource:	0
 URL:		http://www.directfb.org/
 BuildRequires:	DirectFB-c++-devel >= 1:1.2.0
@@ -27,6 +28,7 @@ Insignia - zbiór testów zgodności DirectFB.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -60,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/Insignia
 %attr(755,root,root) %{_bindir}/InsigniaRun
 %attr(755,root,root) %{_libdir}/libinsignia-1.0.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libinsignia-1.0.so.2
+%attr(755,root,root) %ghost %{_libdir}/libinsignia-1.0.so.4
 %dir %{_libdir}/Insignia
 %attr(755,root,root) %{_libdir}/Insignia/DFBTest*.Io
 %{_datadir}/Insignia
